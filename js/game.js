@@ -10,7 +10,7 @@ const start = () => {
     document.getElementById("categoria").innerHTML = categoria;
     document.getElementById("letasUsadas").innerHTML = "";
     palavra = getPalavra(categoria);
-    letrasNaoDescobertas = palavra.length;
+    letrasNaoDescobertas = palavra.replaceAll("-",'').replaceAll(" ",'').length;
 
     getCaracteres(palavra);
 
@@ -25,6 +25,7 @@ const start = () => {
         {
             console.log('Jogada válida');
             acertos  = revelaLetra(letra, palavra);
+            console.log('Acertos: ' + acertos)
             letrasNaoDescobertas-= acertos;
 
             setLetrasUsadas(letra);
@@ -52,7 +53,7 @@ const validaVitoria = (letrasNaoDescobertas, tentativasRestantes) => {
 const validaFimDeJogo = (letrasNaoDescobertas, tentativasRestantes, palavra) => {
     console.log("Validando Fim de jogo...");
     const fim = letrasNaoDescobertas == 0 || tentativasRestantes == 0;
-    console.log(fim);
+    console.log(fim, letrasNaoDescobertas, tentativasRestantes);
     if(fim){
         if(validaVitoria(letrasNaoDescobertas, tentativasRestantes)){
             console.log('venceu...');

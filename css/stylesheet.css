@@ -49,12 +49,25 @@ body{
 }
 
 #animacao{
- width: 300px;
+  width: 500px;
   height: 300px;
   display: block;
   position: relative;
 }
+.bonecoContainer {
+  margin-top: 70px;
+  display: block;
+  position: relative;
 
+}
+.forca{
+  
+  background-image: url(../img/forca.png);
+  background-repeat: no-repeat;
+  background-size: 300px;
+  background-position-x: 105px;
+  background-position-y: -3px;
+}
 .head {
     width: 50px;
     height: 60px;
@@ -115,8 +128,10 @@ body{
     border: 3px solid black;
     display: block;
     position: absolute;
-    top: 86px;
-    left: 100px;
+    top: 110px;
+    left: 107px;
+    transform: rotate(337deg);
+    transform-origin: 0%;
     background-color:black;
   }
   .rightarm {
@@ -127,6 +142,7 @@ body{
     position: absolute;
     top: 86px;
     left: 161px;
+    transform: rotate(35deg);
     transform-origin: 0%;
     background-color:black;
   }
